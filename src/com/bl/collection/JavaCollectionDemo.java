@@ -28,17 +28,22 @@ public class JavaCollectionDemo {
 		System.out.println("____________In MapDemo______________");
 
 		Map<Integer, String> map = new HashMap<>();
-		
+
 		map.put(101, "Rakesh");
 		map.put(102, "Ashish");
 		map.put(103, "Ravi");
 		map.put(104, "Ashish");
 		map.put(104, "Garima");
-		
+
 		Iterator<Entry<Integer, String>> itr = map.entrySet().iterator();
 
 		while (itr.hasNext()) {
 			System.out.println(itr.next());
+		}
+
+		for (int i = 0; i < map.size(); i++) {
+			Entry<Integer, String> ent = (Entry) map.entrySet().toArray()[i];
+			System.out.println(ent.getKey() + " : " + ent.getValue());
 		}
 	}
 
